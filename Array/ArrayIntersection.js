@@ -27,3 +27,54 @@ corresponding count.
 then print it and decrement its corresponding count. After decrement, if the corresponding
 count becomes zero, then we should remove the element from the mapp.
 */
+
+
+function getIntersectedArray(arr1, arr2) {
+    arr1 = arr1.sort((a, b)=>{
+        return a-b;
+    });
+    
+    arr2 = arr2.sort((a, b)=>{
+        return a-b;
+    });
+
+    let intersectedArray = [];
+    let arr1Index = 0;
+    let arr2Index = 0;
+
+    for(; arr1Index <  arr1.length && arr2Index < arr2.length; ) {
+        if(arr1[arr1Index] < arr2[arr2Index]){
+            arr1Index++;
+        }
+        else if (arr1[arr1Index] > arr2[arr2Index]){
+            arr2Index++;
+    
+        }else{
+            intersectedArray.push(arr1[arr1Index])
+            arr1Index++;
+            arr2Index++;
+        }
+    }
+    return intersectedArray;
+    
+}
+
+function main() {
+    let arr1 = [2, 6, 8, 5, 4, 3];
+    let arr2 = [2 ,3 ,4 ,7 ];
+
+    let intersectedArray = getIntersectedArray(arr1, arr2);
+    console.log("intersectedArray :: ", intersectedArray);
+
+}
+
+main();
+
+
+
+
+
+
+
+//let endIndex = (arr1Index > arr2Index) ? arr1Index : arr2Index;
+

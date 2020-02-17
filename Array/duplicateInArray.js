@@ -27,30 +27,55 @@ duplicate element present in the array.
 */
 
 // ****************************Psedo Code****************************
-Function findDuplicate() {
-    let answer = 0;
-    for(let i =0; i< arr.length){
-        answer=answer xor arr[i]
-        for (){}
-            i=0 to i less than or equal to n-2:
-            answer=answer xor i
-        Return answer
-    }  
+function findDuplicateUsingXOR(arr) {
 
+    let xorOfArr = 0;
+
+    for(let i =0; i< arr.length; i++){
+        xorOfArr =xorOfArr ^ arr[i];
+    }
+    
+
+    for (let i =0; i<= arr.length-2; i++){
+        xorOfArr = xorOfArr ^ i;
+    } 
+    
+    return xorOfArr;
 }
+
 //Approach 1
-Function Findduplicate:
-For i = 0 to i less than size:
-For j = 0 to j less than size:
-If i not equal to j and arr[i] is equal to arr[j]:
-Return arr[i]
-return minus infinity
+function findDuplicateUsingDoubleForLoop(arr) {
+    for(let i = 0; i< arr.length; i++){
+        for(let j =0; j< arr.length; j++){
+            if(i != j && arr[i] == arr[j]){
+                return arr[i];
+            }
+        }
+    }
+    return Number.NEGATIVE_INFINITY;
+}
 
 //Approach 2 
-Function Findduplicate:
-answer=0
-For i =0 to i less than n:
-answer=answer xor arr[i]
-For i=0 to i less than or equal to n-2:
-answer=answer xor i
-Return answer
+function findDuplicate(arr) {
+    
+    let sumOfArr = 0;
+    for(let i = 0; i< arr.length; i++){
+        sumOfArr += arr[i];
+    }
+    // Sum of Natural Number from 0 to arr.length-2
+    let n = arr.length-2;
+    let sumOfNaturalNumber = ((n)*(n+1))/2;
+    let duplicateElement = sumOfArr - sumOfNaturalNumber;
+    return duplicateElement;
+
+}
+
+function main() {
+    let arr = [0, 5, 2, 5, 4, 7, 1, 3, 6];
+    console.log("duplicate Element :: ", findDuplicate(arr));
+    console.log("duplicate Element :: ", findDuplicateUsingDoubleForLoop(arr));
+    console.log("duplicate Element :: ", findDuplicateUsingXOR(arr));
+
+}
+
+main();

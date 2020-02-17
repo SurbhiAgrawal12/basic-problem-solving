@@ -21,3 +21,19 @@ This approach uses 2 properties of XOR:
 1. XOR of a number with itself is 0.
 2. XOR of a number with 0 is number itself.
 */
+
+function getUniqueElementOfArray(arr) {
+
+    let xorOfArr = 0;
+    for(let i =0; i<arr.length; i++){
+        xorOfArr = xorOfArr ^ arr[i];
+    }
+    return xorOfArr;
+}
+
+function main() {
+    let arr = [2, 3 ,1 ,1 ,3, 6, 2];
+    return getUniqueElementOfArray(arr);
+}
+
+console.log("unique element :: ", main());

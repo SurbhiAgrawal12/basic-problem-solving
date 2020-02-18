@@ -25,7 +25,7 @@ function sort012(arr) {
     let zeroPos = 0;
     let twoPos = arr.length - 1;
 
-    while(current < twoPos) {
+    while(current <= twoPos) {
         if(arr[current] == 0) {
             swap(arr, current , zeroPos);
             current++;
@@ -43,7 +43,7 @@ function sort012(arr) {
 
 }
 
-let arr = [0, 1, 2, 0, 2, 0, 1];
+let arr = [0, 1, 2, 0, 2, 0, 0];
 console.log("original array :: ", arr);
 sort012(arr);
 console.log("sort012 :: ", arr);

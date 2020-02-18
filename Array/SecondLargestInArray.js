@@ -14,4 +14,32 @@ Approach 3: This is an efficient solution to find the second largest element in 
 this approach we will maintain both maximum and second maximum elements with us at a time
 and will continue to update both by scanning the array only once.
 
-*/
+*/ 
+
+function findSecondlargest(arr) {
+
+    let largestElement = Number.NEGATIVE_INFINITY;
+    let secondLargest = Number.NEGATIVE_INFINITY;
+
+    for(let i =0; i< arr.length; i++){
+        if(arr[i] > largestElement){
+            secondLargest = largestElement;
+            largestElement = arr[i];
+        }
+        else if(arr[i] > secondLargest && arr[i] != largestElement) {
+            secondLargest =  arr[i];
+        }
+    }
+    return secondLargest;
+}
+
+function main() {
+
+    let arr = [2,2,2,2,2,2,7,2,2,2];
+
+    let secondlargestElement = findSecondlargest(arr);
+    console.log("Second Largest :: ", secondlargestElement);
+
+}
+
+main();

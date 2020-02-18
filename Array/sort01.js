@@ -43,7 +43,11 @@ function sort01(arr) {
     
 }
 
-let arr = [0, 1, 1, 0, 1, 0, 0, 1, 0, 0];
-console.log("original array :: ", arr);
-sort01(arr);
-console.log("sort01 :: ", arr);
+function main() {
+    let arr = [0, 1, 1, 0, 1, 0, 0, 1, 0, 0];
+    console.log("original array :: ", arr);
+    sort01(arr);
+    console.log("sort01 :: ", arr);
+}
+
+main();

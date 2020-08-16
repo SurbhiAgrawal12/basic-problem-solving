@@ -13,8 +13,8 @@ Approach 1:
 
 Approach 2:
 1) reverse the elements of an array. [7, 6, 5,4 ,3 ,2, 1]
-2) reverese the n-1 elements of an array [ 3,4,5,6,7,2,1]
-3) reverse the last 2 elements of an array [3,4,5,6,7,1,2]
+2) reverese the n-d elements of an array [ 3,4,5,6,7,2,1]
+3) reverse the last 2(d) elements of an array [3,4,5,6,7,1,2]
 
 */
 

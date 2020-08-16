@@ -8,8 +8,8 @@ remain the same.
 **********************************Algorithm**********************************
 1) So let’s use a two pointer approach to solve this problem. We’ll maintain two pointers,
 ‘current’ and ‘nonZeroPos’.
-2) Both pointers will be initialised with 0.
-3) 
+2) one pointer will be initialised with 0.
+3) Another pointer will be initialised with arr.length-1
 */
 function swap(arr, currentPointer, zeroPointer) {
     let temp = arr[currentPointer];

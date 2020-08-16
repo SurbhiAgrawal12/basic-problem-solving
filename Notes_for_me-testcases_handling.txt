@@ -1,0 +1,13 @@
+Notes
+
+1) Check for duplicate elements in an array
+2) check for negative elements as well
+3) check or zero and non zero cases
+4) check for Negative infinity and infinity cases as well
+5) try to solve in minimum iteration 
+7) try to avoid making more variables
+8) check for all same elements.
+9) for duplicate values and all_same_elements try to reduce the number of operations, 
+while making changes check for other cases again....it should not affect other test cases.
+9) in while loop condition always remember arry iteration should not be more that array size
+10) take care while handling multiple pointers that every iteration or pointer should not be same else it will go to infinite state

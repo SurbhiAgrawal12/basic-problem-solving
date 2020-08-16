@@ -70,6 +70,29 @@ function findDuplicate(arr) {
 
 }
 
+let findDuplicateUsingMap = (arr) => {
+    let map = new Map();
+
+    for(let eachElement of arr) {
+        if(map.has(eachElement)) {
+            let value = map.get(eachElement);
+            value++;
+            map.set(eachElement, value);
+        }else {
+            map.set(eachElement, 1);
+        }
+    }
+
+    let printDuplicates = (value, key) => {
+        if(value > 1) {
+            console.log("Duplicate number is :: ", key);
+        }
+    }
+
+    map.forEach(printDuplicates);
+
+}
+
 function main() {
     let arr = [0, 5, 2, 5, 4, 7, 1, 3, 6];
     console.log("duplicate Element :: ", findDuplicate(arr));

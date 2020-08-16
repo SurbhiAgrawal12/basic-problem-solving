@@ -25,7 +25,8 @@ this problem. To continue with the hashmaps we can proceed with the following st
 corresponding count.
 3. Now for every element of the second array, search it in the hashmap and if it is present
 then print it and decrement its corresponding count. After decrement, if the corresponding
-count becomes zero, then we should remove the element from the mapp.
+count becomes zero, then we should remove the element from the mapp. 
+// we are removing from map because it might be possible arr2 will have duplicate numbers as well
 */
 
 
@@ -70,11 +71,35 @@ function main() {
 
 main();
 
+/// Using Hashmap()
+let findIntersectedArray = (arr1, arr2) => {
 
+    const map = new Map();
+    let intersectedArray = [];
 
+    // traverse the first array and create a map and put the corresponding count of that key as well
+    for(let i =0; i<arr1.length; i++) {
+        if(map.has(arr1[i])){
+            let value = (map.get(arr1[i]));
+            value++;
+            map.set(arr1[i] , value);
+        }else {
+            map.set(arr1[i] , 1);
+        }
+    }
 
-
-
-
-//let endIndex = (arr1Index > arr2Index) ? arr1Index : arr2Index;
-
+    //traverse the second array and check the element is presnt or not
+    //if present decrement the count and if count == 0 remove from the map as well to avoid duplicates
+    // e.g { 3, 3, 7} && {3, 3, 1, 8} => {3,3}output but {3, 7, 8} && {3, 3, 7}  => {3,7}output
+    for(let i = 0; i<arr2.length; i++) {
+        if(map.has(arr2[i])) {
+            intersectedArray.push(arr2[i]);
+            //console.log(arr2[i]);
+            let value = map.get(arr2[i]); //decrement the count
+            value--;
+            if(value === 0) {
+                map.delete(arr2[i]);
+            }
+        }
+    }
+}

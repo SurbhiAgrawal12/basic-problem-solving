@@ -1,0 +1,31 @@
+In JavaScript, BigInt is a built-in object introduced in ECMAScript 2020 that provides a way to represent integers with arbitrary precision. It allows you to work with and perform calculations on numbers that exceed the limits of the standard Number data type.
+
+The BigInt data type is used to represent integers that are larger than Number.MAX_SAFE_INTEGER, which is the maximum safe integer that can be represented by the Number type (2^53 - 1). BigInt can accurately represent and perform calculations on integers of any size.
+
+To create a BigInt value, you append the letter "n" to the end of an integer literal or use the BigInt() function to convert a value to a BigInt. Here are a few examples:
+
+const bigNum = 123456789012345678901234567890n;
+console.log(bigNum); // Output: 123456789012345678901234567890n
+
+const converted = BigInt(42);
+console.log(converted); // Output: 42n
+
+Note the "n" suffix in the first example and the use of the BigInt() function in the second example to create BigInt values.
+
+With BigInt, you can perform arithmetic operations such as addition, subtraction, multiplication, and division on large integers. However, you cannot mix BigInt with regular Number values in arithmetic operations, as they are different types.
+
+Here's an example illustrating arithmetic operations with BigInt:
+const a = 12345678901234567890n;
+const b = 9876543210987654321n;
+
+const sum = a + b;
+const difference = a - b;
+const product = a * b;
+const quotient = a / b; // Division results in a BigInt, discarding the remainder
+
+console.log(sum); // Output: 22222222111111111111n
+console.log(difference); // Output: 2479135671036912359n
+console.log(product); // Output: 121932631137021795267482808277453690n
+console.log(quotient); // Output: 1n
+
+With BigInt, you can perform various mathematical operations on large integers without losing precision. However, keep in mind that BigInt operations may have different performance characteristics compared to regular Number operations due to the increased precision and memory requirements.

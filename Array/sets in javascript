@@ -1,0 +1,22 @@
+<!-- In JavaScript, a Set is a built-in object that allows you to store unique values of any type. It is similar to an array in that it can store multiple values, but unlike an array, it only stores unique values, meaning it cannot have duplicate entries.
+
+Here is an example of how to use a Set in JavaScript: -->
+
+const mySet = new Set();
+
+mySet.add(1);
+mySet.add(2);
+mySet.add('three');
+
+console.log(mySet); // Output: Set { 1, 2, 'three' }
+
+console.log(mySet.has(1)); // Output: true
+console.log(mySet.has(3)); // Output: false
+
+mySet.delete(2);
+
+console.log(mySet); // Output: Set { 1, 'three' }
+
+<!-- In this example, we create a new Set called mySet, and add the values 1, 2, and 'three' to it using the add method. We can then check if a value is present in the Set using the has method, and delete a value from the Set using the delete method.
+
+Sets are useful when you need to store a collection of unique values and quickly check if a value is already present in the collection. They are often used for tasks such as removing duplicate elements from an array or counting the frequency of unique values in a dataset. -->
